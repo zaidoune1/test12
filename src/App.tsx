@@ -36,11 +36,16 @@ function App() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         </div>
+        <div className="card">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        </div>
       </div>
       <div
         style={{
           margin: "20px auto",
-          width: "200px",
+          minWidth: "20%",
+          maxWidth: "50%",
           height: "200px",
           backgroundColor: "royalblue",
           borderRadius: "10px",
