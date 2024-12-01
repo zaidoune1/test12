@@ -1,42 +1,159 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+@media (pointer: fine) {
+  .btn:hover {
+    background-color: royalblue;
+    color: white;
+  }
+  /* applice hover pour les ordi et qui utilise souri mais pas pour les tactile touche comme les tab etc 
+  le contraire c est  : coarse
+  */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+  margin-bottom: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.btn-shadow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 140px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  margin: 3rem;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.btn-shadow:hover {
+  box-shadow: 12px 12px 12px rgb(0, 0, 0, 0.1), -10px -10px 10px white;
+}
+
+/* or width inset pour rendre l'ombre de shadow fonctionne a l'interieure
+.btn-shadow:hover {
+  box-shadow: 12px 12px 12px rgb(0, 0, 0, 0.1) inset,
+    -10px -10px 10px white inset;
+}
+*/
+
+.container {
+  display: none;
+}
+
+/* pour quand tu check sur linput de type check le div qu il a un className container apparaitre*/
+#myCheckbox:checked ~ .container {
+  display: block;
+}
+
+/* #myCheckbox:checked ~ .container {
+  display: flex;
+
+  pour mettre plusieure choix ou user par exmemple au de juste un seule div
+} */
+
+/* .container_texte {
+  width: 800px;
+  max-width: 100%;
+} */
+
+/* or */
+.container_texte {
+  width: min(800px, 90%);
+}
+
+.container_clamp {
+  width: clamp(200px, 50vw, 400%);
+}
+
+.container_ombre {
+  width: clamp(200px, 50vw, 400px);
+}
+
+.transparent {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  font-family: sans-serif;
+  text-align: center;
+  line-height: 1;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.transparent:first-child {
+  padding: 20px;
+}
+
+button:has(svg) {
+  width: 200px;
+  height: 30px;
+}
+/* il va appliqué ce style pour les button qui contienne un svg */
+
+.bloc_button:not(:first-child) {
+  background-color: red;
+}
+/* bloc_button et un bloc qui contien des buttons :  applique ce style sur tout les button dans le bloc bloc_button sauf le premiere enfent */
+
+body:has(option[value="black"]:checked) {
+  background-color: black;
+  color: white;
+}
+
+.grendient_text {
+  background: linear-gradient(to right, red, blue);
+  background-clip: text;
+  color: transparent;
+}
+
+.drop_down {
+  display: none;
+}
+.dropdown_wrapper > .block_drop {
+  margin-bottom: 10px;
+}
+
+.dropdown_wrapper:focus-within .drop_down {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drop_down > button {
+  background-color: blue;
+  color: white;
+  width: clamp(50px, 50vw, 150px);
+  height: 50px;
+  gap: 5px;
+}
+
+.scrollign_containt {
+  display: flex;
+  margin: 30px auto;
+  width: 300px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  box-shadow: 12px 12px 12px rgb(0, 0, 0, 0.1), -10px -10px 10px white;
 }
 
 .card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  text-align: center;
+  scroll-snap-align: center;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
